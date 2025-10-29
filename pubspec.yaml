@@ -1,6 +1,6 @@
-name: gradienblur
+name: gradient_blur
 description: A Flutter widget that creates a beautiful and performant gradient blur effect, perfect for headers, overlays, and modern UI designs.
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/Dr-who412/gradienblur
 repository: https://github.com/Dr-who412/gradienblur
 

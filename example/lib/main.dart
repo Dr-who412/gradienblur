@@ -1,6 +1,6 @@
 // example/lib/main.dart
 import 'package:flutter/material.dart';
-import 'package:gradienblur/gradienblur.dart';
+import 'package:gradient_blur/gradient_blur.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'GradienBlur Example',
+      title: 'GradientBlur Example',
       theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
       home: const ExamplePage(),
     );
@@ -25,7 +25,7 @@ class ExamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Stack(
@@ -37,14 +37,16 @@ class ExamplePage extends StatelessWidget {
               height: MediaQuery.of(context).size.height/2,
             ),
 
-            // Your GradienBlur Widget
-             Container(
+            // Your Gradient Blur Widget
+             SizedBox(
                height: 240,
-               child: GradienBlur(
-                 maxBlur: 40.0,
-                 minBlur: 0.0,
+               child: GradientBlur(
+                 maxBlur: 20.0,
+                 minBlur: 8.0,
+                 edgeBlur: null,
+                 slices: 120,
                  gradient: LinearGradient(
-                   colors: [Colors.black87.withOpacity(.2), Colors.transparent],
+                   colors: [Colors.black87.withValues(alpha: .2), Colors.transparent],
                    begin: Alignment.topCenter,
                    end: Alignment.bottomCenter,
                    stops: [0.0, 0.5],
