@@ -34,15 +34,17 @@ class ExamplePage extends StatelessWidget {
             // Background Image
             Image.network(
               'https://wallpaperaccess.com/full/2833661.jpg',
-              height: MediaQuery.of(context).size.height/2,
+              //height: MediaQuery.of(context).size.height/2,
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.contain,
             ),
 
             // Your Gradient Blur Widget
              SizedBox(
-               height: 240,
+               height: MediaQuery.of(context).size.height,
                child: GradientBlur(
-                 maxBlur: 20.0,
-                 minBlur: 8.0,
+                 maxBlur: 10.0,
+                 minBlur: 0.0,
                  edgeBlur: null,
                  slices: 120,
                  gradient: LinearGradient(

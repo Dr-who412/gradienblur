@@ -1,12 +1,12 @@
 GradienBlur
 
-[//]: # (![alt text]&#40;https://img.shields.io/pub/v/gradienblur.svg&#41;)
+![alt text](https://img.shields.io/pub/v/gradienblur.svg)
 
-[//]: # ()
-[//]: # (![alt text]&#40;https://img.shields.io/pub/points/gradienblur&#41;)
 
-[//]: # ()
-[//]: # (![alt text]&#40;https://img.shields.io/badge/license-MIT-blue.svg&#41;)
+![alt text](https://img.shields.io/pub/points/gradienblur)
+
+
+![alt text](https://img.shields.io/badge/license-MIT-blue.svg)
 A highly performant and customizable Flutter widget that creates a beautiful, soft gradient blur effect. Perfect for headers, overlays, and modern UI designs.
 This package creates its effect by intelligently stacking multiple blur layers, giving you fine-grained control over performance and visual quality.
 <br>
