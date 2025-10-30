@@ -11,8 +11,10 @@ Built for **Flutter 3.24+**, optimized for performance, and easy to integrate.
 
 ## 🌟 Preview
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Dr-who412/gradienblur/1da8d2a41c0398ab9991ebb5daa8d68d23558fbe/assets/Screenshot_20251030_005935.png" width="400" />
+<p>
+  <img src="https://raw.githubusercontent.com/Dr-who412/gradienblur/1da8d2a41c0398ab9991ebb5daa8d68d23558fbe/assets/Screenshot_20251030_005935.png" width="45%" />
+  <img src="https://github.com/Dr-who412/gradienblur/blob/images/assets/Screenshot_20251030_140121.png?raw=true" width="45%" />
+  <img src="https://github.com/Dr-who412/gradienblur/blob/images/assets/Screenshot_20251030_140211.png?raw=true" width="45%" />
 </p>
 
 ---

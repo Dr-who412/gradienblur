@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gradient_blur/gradient_blur.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-
 // Main function to run the app
 void main() {
   runApp(const MyApp());
@@ -35,27 +34,29 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('GradientBlur Examples'),
-      ),
+      appBar: AppBar(title: const Text('GradientBlur Examples')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const ImageExampleScreen(),
-                ));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ImageExampleScreen(),
+                  ),
+                );
               },
               child: const Text('Example over an Image'),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const WebViewExampleScreen(),
-                ));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const WebViewExampleScreen(),
+                  ),
+                );
               },
               child: const Text('Example over a WebView (iOS/Android)'),
             ),
@@ -83,7 +84,7 @@ class ImageExampleScreen extends StatelessWidget {
             width: double.infinity,
           ),
 
-          // GradienBlur widget
+          // GradientBlur widget
           Positioned(
             top: 0,
             left: 0,
@@ -96,7 +97,9 @@ class ImageExampleScreen extends StatelessWidget {
               edgeBlur: null,
               gradient: LinearGradient(
                 colors: [
-                  Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.8),
+                  Theme.of(
+                    context,
+                  ).scaffoldBackgroundColor.withValues(alpha: 0.8),
                   Colors.transparent,
                 ],
                 begin: Alignment.topCenter,
@@ -106,12 +109,15 @@ class ImageExampleScreen extends StatelessWidget {
               child: SafeArea(
                 bottom: false,
                 child: Container(
-                  height: MediaQuery.of(context).size.height/3,
+                  height: MediaQuery.of(context).size.height / 3,
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
                       IconButton(
-                        icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                       const Text(
@@ -173,10 +179,7 @@ class _WebViewExampleScreenState extends State<WebViewExampleScreen> {
           WebViewWidget(controller: _controller),
 
           // Loading indicator
-          if (_isLoading)
-            const Center(
-              child: CircularProgressIndicator(),
-            ),
+          if (_isLoading) const Center(child: CircularProgressIndicator()),
 
           // GradientBlur widget (top layer)
           Positioned(
@@ -191,7 +194,9 @@ class _WebViewExampleScreenState extends State<WebViewExampleScreen> {
               edgeBlur: null,
               gradient: LinearGradient(
                 colors: [
-                  Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.8),
+                  Theme.of(
+                    context,
+                  ).scaffoldBackgroundColor.withValues(alpha: 0.8),
                   Colors.transparent,
                 ],
                 begin: Alignment.topCenter,
@@ -201,12 +206,15 @@ class _WebViewExampleScreenState extends State<WebViewExampleScreen> {
               child: SafeArea(
                 bottom: false,
                 child: Container(
-                  height: MediaQuery.of(context).size.height/3,
+                  height: MediaQuery.of(context).size.height / 3,
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
                       IconButton(
-                        icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                       const Text(
