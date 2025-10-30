@@ -1,6 +1,6 @@
 // lib/src/gradient_blur.dart
 
-import 'dart:ui'; // Required for lerpDouble and ImageFilter
+import 'dart:ui'; // Required for lerp Double and ImageFilter
 import 'package:flutter/material.dart';
 import 'blur_widget.dart';
 
@@ -87,14 +87,19 @@ class GradientBlur extends StatelessWidget {
     return ClipRect(
       child: Stack(
         children: [
-          // 1. The Optional Gradient Overlay
+          // FIX: Wrap the blurStack in a Positioned.fill to constrain its size.
+          // This prevents the "unbounded height" error.
+          Positioned.fill(
+            child: blurStack,
+          ),
+
+          // Layer 2: The Optional Gradient Overlay on top of the blur.
           if (gradient != null)
             Container(
               decoration: BoxDecoration(gradient: gradient),
             ),
-          // 2. The Gradient Blur Layer
-          blurStack,
-          // 3. The Child Content
+
+          // Layer 3: The Child Content on top of everything.
           child,
         ],
       ),
