@@ -163,19 +163,3 @@ See the [LICENSE](https://github.com/Dr-who412/gradienblur/blob/main/LICENSE) fi
 
 ---
 
-## 🏁 Next Steps
-
-Before publishing, ensure:
-
-```sh
-dart format .
-flutter analyze
-dart pub publish --dry-run
-```
-
-Then publish with:
-```sh
-dart pub publish
-```
-
-After upload, your score will reach **160/160** ✅
