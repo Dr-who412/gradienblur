@@ -35,7 +35,7 @@ Add the dependency to your **pubspec.yaml**:
 
 ```yaml
 dependencies:
-  gradient_blur: ^1.0.1
+  gradient_blur: ^1.0.2+1
 ```
 
 Then run:
@@ -60,29 +60,60 @@ class ExamplePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // Background Image
           Image.network(
-            'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f',
+            'https://images.unsplash.com/photo-1576085898323-218337e3e43c',
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
           ),
-          const GradientBlur(
-            blur: 20,
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.black54,
-                Colors.transparent,
-              ],
-            ),
-            child: Center(
-              child: Text(
-                'Gradient Blur Example',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+
+          // GradientBlur widget
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: GradientBlur(
+              maxBlur: 8.0,
+              minBlur: 0.0,
+              slices: 30,
+              curve: Curves.easeInOut,
+              edgeBlur: null,
+              gradient: LinearGradient(
+                colors: [
+                  Theme.of(
+                    context,
+                  ).scaffoldBackgroundColor.withValues(alpha: 0.8),
+                  Colors.transparent,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: const [0.0, 0.7],
+              ),
+              child: SafeArea(
+                bottom: false,
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 3,
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
+                        onPressed: () => Navigator.of(context).pop(),
+                      ),
+                      const Text(
+                        'Image Example',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
